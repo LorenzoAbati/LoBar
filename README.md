@@ -25,10 +25,10 @@ Users launch Claude Code with:
 - **Next.js** App Router on Vercel.
 - **Vercel Blob** for public, immutable PNG assets.
 - **Neon Postgres** connected through Vercel Marketplace for metadata, creator ownership, and install counts.
-- **GitHub OAuth via NextAuth** for authenticated publishing.
+- **GitHub OAuth** with signed, HttpOnly sessions for authenticated publishing.
 - A Docker image with Next standalone output for self-hosting.
 
-Vercel’s supported client-upload flow lets the app authorize uploads before the browser sends bytes to Blob, and its Neon integration provisions managed Postgres with project environment variables. See the [Vercel Blob guide](https://vercel.com/docs/vercel-blob/client-upload) and [Neon integration](https://vercel.com/marketplace/neon/).
+LoBar validates each small pixel frame before storing it in Blob, and the Neon integration provisions managed Postgres with project environment variables. See the [Vercel Blob guide](https://vercel.com/docs/vercel-blob/server-upload) and [Neon integration](https://vercel.com/marketplace/neon/).
 
 ## Local development
 
@@ -52,7 +52,7 @@ Open `http://localhost:3000`, create a pack, publish it, download it, and copy t
    https://your-domain.vercel.app/api/auth/callback/github
    ```
 
-5. Set `NEXTAUTH_URL`, `NEXTAUTH_SECRET`, `GITHUB_ID`, and `GITHUB_SECRET` from `.env.example`.
+5. Set `AUTH_SECRET`, `GITHUB_ID`, and `GITHUB_SECRET` from `.env.example`.
 6. Run the migration against the production database:
 
    ```bash
