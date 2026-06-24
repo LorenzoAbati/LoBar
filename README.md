@@ -2,6 +2,8 @@
 
 LoBar is a production-ready marketplace for pixel animation packs that sit beside Claude Code in iTerm2. Designers draw four **thinking** and four **typing** frames in the browser, publish them under their GitHub identity, and share a one-command installer.
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/LorenzoAbati/LoBar)
+
 The installer deliberately does **not** write, replace, or depend on Claude Code configuration. It installs only:
 
 - the selected pack in `~/.local/share/lobar/themes/<slug>`;
