@@ -1,0 +1,8 @@
+services:
+  lobar:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      LOBAR_DEMO_MODE: "1"
+      LOBAR_DATA_DIR: /tmp/lobar-demo
